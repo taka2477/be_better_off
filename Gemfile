@@ -11,6 +11,12 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks',   '~> 5'
 gem 'jbuilder',     '~> 2.5'
 gem 'bootsnap',     '>= 1.1.0', require: false
+gem 'devise'
+gem 'kaminari'
+gem 'cancancan'
+gem 'omniauth-twitter'
+gem 'devise-i18n'
+gem 'rails-i18n'
 
 group :development, :test do
   gem 'sqlite3'
@@ -18,7 +24,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg', '0.20.0'
+  gem 'pg'
 end
 
 group :development do
