@@ -14,7 +14,7 @@ gem 'bootsnap',     '>= 1.1.0', require: false
 gem 'devise'
 gem 'kaminari'
 gem 'cancancan'
-gem 'omniauth-twitter'
+#gem 'omniauth-twitter'
 gem 'devise-i18n'
 gem 'rails-i18n'
 
