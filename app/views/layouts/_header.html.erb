@@ -5,10 +5,10 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="#">サービス概要</a>
-      <a class="nav-item nav-link" href="#">投稿一覧</a>
-      <a class="nav-item nav-link" href="#">メンバー登録(無料)</a>
-      <a class="nav-item nav-link" href="#">ログイン</a>
+      <%= link_to 'サービス概要', home_show_path, class: "nav-item nav-link" %>
+      <%= link_to '投稿一覧', posts_path, class: "nav-item nav-link" %>
+      <%= link_to 'メンバー登録(無料)', new_user_registration_path, class: "nav-item nav-link" %>
+      <%= link_to 'ログイン', new_user_session_path, class: "nav-item nav-link" %>
       <a class="nav-item nav-link" href="#">管理人ログイン</a>
       <a class="nav-item nav-link" href="#">お問い合わせ</a>
     </div>
