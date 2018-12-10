@@ -17,6 +17,8 @@ gem 'cancancan'
 #gem 'omniauth-twitter'
 gem 'devise-i18n'
 gem 'rails-i18n'
+gem 'bootstrap',     '~> 4.1.0'
+gem 'devise-bootstrap-views'
 
 group :development, :test do
   gem 'sqlite3'
