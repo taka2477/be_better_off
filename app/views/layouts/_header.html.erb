@@ -9,8 +9,10 @@
       <%= link_to '投稿一覧', posts_path, class: "nav-item nav-link" %>
       <%= link_to 'メンバー登録(無料)', new_user_registration_path, class: "nav-item nav-link" %>
       <%= link_to 'ログイン', new_user_session_path, class: "nav-item nav-link" %>
-      <a class="nav-item nav-link" href="#">管理人ログイン</a>
-      <a class="nav-item nav-link" href="#">お問い合わせ</a>
+      <% if user_signed_in? %>
+        <%= link_to '投稿', new_post_path, class: "nav-item nav-link" %>
+      <% end %>
+      <%= link_to '管理者ログイン', new_user_session_path, class: "nav-item nav-link" %>
     </div>
   </div>
 </nav>
