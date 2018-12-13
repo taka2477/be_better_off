@@ -25,5 +25,17 @@ module BeBetterOff
         request_specs: true
       g.fixture_replacement :factory_bot, dir: 'spec/factories'
     end
+    config.generators do |g|
+      g.time_zone = 'Tokyo',
+      g.test_framework = :rspec,
+      g.fixtures       = false,
+      g.view_specs     = false,
+      g.helper_specs   = false,
+      g.routing_specs  = false,
+      g.system_tests   = false,
+      g.stylesheets    = false,
+      g.javascripts    = false,
+      g.helper         = false
+    end
   end
 end

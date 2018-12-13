@@ -4,8 +4,10 @@
     <div class="navbar-nav">
       <%= link_to 'サービス概要', home_show_path, class: "nav-item nav-link" %>
       <%= link_to '投稿一覧', posts_path, class: "nav-item nav-link" %>
-      <%= link_to 'メンバー登録(無料)', new_user_registration_path, class: "nav-item nav-link" %>
-      <%= link_to 'ログイン', new_user_session_path, class: "nav-item nav-link" %>
+      <% unless user_signed_in? %>
+        <%= link_to 'メンバー登録(無料)', new_user_registration_path, class: "nav-item nav-link" %>
+        <%= link_to 'ログイン', new_user_session_path, class: "nav-item nav-link" %>
+      <% end %>
       <% if user_signed_in? %>
         <%= link_to '投稿', new_post_path, class: "nav-item nav-link" %>
         <%= link_to 'ログアウト', destroy_user_session_path, class: "nav-item nav-link", method: :delete %>
