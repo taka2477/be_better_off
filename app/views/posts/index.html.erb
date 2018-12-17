@@ -8,44 +8,5 @@
 </div>
 <br>
 <table class="table table-bordered border-primary table-hover table-sm posts_table container block-center">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col" style="width: 40px">No.</th>
-      <th scope="col" style="width: 700px">投稿タイトル(クリックで詳細)</th>
-      <th scope="col">名前</th>
-      <th scope="col">年齢</th>
-      <th scope="col">性別</th>
-      <th scope="col">投稿日</th>
-      <th scope="col">更新日時</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td><%= link_to @post.first.title, post_path(@post.first.id) %></td>
-      <td><%= @post.first.name %></td>
-      <td>hoge</td>
-      <td>hoge</td>
-      <td><%= @post.first.created_at.to_s(:datetime_base) %></td>
-      <td><%= @post.first.updated_at.to_s(:datetime_base) %></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td><%= link_to @post.second.title, post_path(@post.second.id) %></td>
-      <td><%= @post.second.name %></td>
-      <td>hoge</td>
-      <td>hoge</td>
-      <td><%= @post.second.created_at.to_s(:datetime_base) %></td>
-      <td><%= @post.second.updated_at.to_s(:datetime_base) %></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>hoge</td>
-      <td>hoge</td>
-      <td>hoge</td>
-      <td>hoge</td>
-      <td>2018/4/1</td>
-      <td>2018/4/1</td>
-    </tr>
-  </tbody>
+  <%= render 'post_contents', posts: @posts %>
 </table>
