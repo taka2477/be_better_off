@@ -1,9 +1,9 @@
 <% provide(:title, @post.title) %>
 
-<div class="d-flex align-items-center mt-4 mb-4">
+<div class="text-center align-items-center mt-4 mb-4">
   <div class="ml-auto posts_button">
     <%= link_to '投稿一覧', posts_path, class: "btn btn-outline-info", role: "button" %>
-    <%= link_to '編集', edit_post_path, class: "btn btn-outline-info", role: "button" if user_signed_in? %>
+    <%= link_to '編集', edit_post_path, class: "btn btn-outline-info", role: "button" if user_signed_in? && current_user %>
   </div>
 </div>
 
