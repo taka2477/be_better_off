@@ -12,6 +12,9 @@
   </div>
   <div class="form-group">
     <%= f.label :body, '投稿内容' %>
+    <small id="poster-tip" class="form-text text-muted">
+      プレゼント内容、予算、相手様のご職業、性別、年齢、リアクション(できるだけ具体的に)
+    </small>
     <%= f.text_area :body, class: 'form-control', rows:10 %>
   </div>
   <%= f.submit '投稿', class: 'btn btn-info btn-block' %>
