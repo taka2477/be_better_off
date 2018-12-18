@@ -12,7 +12,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    current_user.posts.build(post_params)
+    @post = current_user.posts.build(post_params)
+    if @post.save
+      redirect_to posts_path
+    else
+      redirect_to new_post_path
+    end
   end
 
   def edit
@@ -21,13 +26,19 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    current_user.posts.update(post_params)
+    @post.update(post_params)
     redirect_to post_path(@post.id)
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.delete
+    redirect_to posts_path
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:name, :title, :body)
+    params.require(:post).permit(:title, :body)
   end
 end

@@ -17,6 +17,14 @@
     <br>
 
     <div class="field">
+      <%= f.text_field :age, autofocus: true, placeholder: "年齢" %>
+    </div>
+    <br>
+
+    <label><%= f.radio_button :gender, "男" %> 男 </label>
+    <label><%= f.radio_button :gender, "女" %> 女 </label>
+
+    <div class="field"><br>
       <% if @minimum_password_length %>
       <em>(パスワード <%= @minimum_password_length %> 文字以上)</em>
       <% end %><br />

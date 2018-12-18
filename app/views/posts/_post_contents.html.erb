@@ -1,12 +1,13 @@
 <thead class="thead-dark">
   <tr>
-    <th scope="col" style="width: 40px">No.</th>
+    <th scope="col" style="width: 30px">No.</th>
     <th scope="col" style="width: 300px">投稿タイトル(クリックで詳細)</th>
     <th scope="col">名前</th>
     <th scope="col">年齢(投稿者)</th>
     <th scope="col">性別(投稿者)</th>
     <th scope="col">年齢(あいて)</th>
     <th scope="col">性別(あいて)</th>
+    <th scope="col">予算</th>
     <th scope="col">投稿日</th>
     <th scope="col">更新日時</th>
   </tr>
@@ -16,11 +17,12 @@
     <tr>
       <th scope="row"><%= post.id %></th>
       <td><%= link_to post.title, post_path(post.id) %></td>
-      <td><%= link_to post.name, user_path(post.id) %></td>
-      <td>あなた年齢</td>
-      <td>あなた性別</td>
+      <td><%= link_to post.user.username, user_path(post.user_id) %></td>
+      <td><%#= post.age %></td>
+      <td><%#= post.age %></td>
       <td>年齢</td>
       <td>性別</td>
+      <td>予算</td>
       <td><%= post.created_at.to_s(:datetime_base) %></td>
       <td><%= post.updated_at.to_s(:datetime_base) %></td>
     </tr>
