@@ -10,13 +10,13 @@
 </div>
 
 <div class="card">
-  <div class="card-header bg-info text-white">
+  <div class="card-header text-white bg-dark">
       <h4><%= @post.title %></h4>
   </div>
   <div class="card-body">
       <p class="card-text"><%= @post.body %></p>
   </div>
   <div class="card-footer">
-    <p class="text-right font-weight-bold mr-10"><%= @post.name %></p>
+    <p class="text-right font-weight-bold mr-10"><%= @post.user.username %></p>
   </div>
 </div>

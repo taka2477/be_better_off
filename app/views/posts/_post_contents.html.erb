@@ -2,7 +2,7 @@
   <tr>
     <th scope="col" style="width: 30px">No.</th>
     <th scope="col" style="width: 300px">投稿タイトル(クリックで詳細)</th>
-    <th scope="col">名前</th>
+    <th scope="col">投稿者</th>
     <th scope="col">年齢(投稿者)</th>
     <th scope="col">性別(投稿者)</th>
     <th scope="col">年齢(あいて)</th>
@@ -18,8 +18,8 @@
       <th scope="row"><%= post.id %></th>
       <td><%= link_to post.title, post_path(post.id) %></td>
       <td><%= link_to post.user.username, user_path(post.user_id) %></td>
-      <td><%#= post.age %></td>
-      <td><%#= post.age %></td>
+      <td><%= post.user.age %></td>
+      <td><%= post.user.gender %></td>
       <td>年齢</td>
       <td>性別</td>
       <td>予算</td>
