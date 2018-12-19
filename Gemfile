@@ -18,6 +18,7 @@ gem 'devise-i18n'
 gem 'rails-i18n'
 gem 'bootstrap',     '~> 4.1.0'
 gem 'devise-bootstrap-views'
+gem 'bullet'
 
 group :development, :test do
   gem 'rspec-rails'

@@ -5,8 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable # , :omniauthable, omniauth_providers: [:twitter]
 
-  validates :username, presence: true, uniqueness: true
-  validates :age, presence: true
-  validates :gender, presence: true
-
+  validates :username, presence: true, uniqueness: true, length: { maximum: 15 }
+  validates :age, presence: true, length: { maximum: 2 }
+  validates :gender, presence: true, length: { maximum: 2 }
 end

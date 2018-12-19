@@ -12,11 +12,15 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build(post_params)
-    if @post.save
+    post = current_user.posts.build(post_params)
+    if post.save
       redirect_to posts_path
+      flash[:notice] = "投稿しました"
     else
-      redirect_to new_post_path
+      redirect_to new_post_path, flash: {
+        post: post,
+        error_messages: post.errors.full_messages
+      }
     end
   end
 
@@ -25,15 +29,19 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
-    @post.update(post_params)
-    redirect_to post_path(@post.id)
+    post = Post.find(params[:id])
+    if post.update(post_params)
+      flash[:notice] = "投稿が更新されました"
+      redirect_to post_path(post.id)
+    end
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @post.delete
-    redirect_to posts_path
+    post = Post.find(params[:id])
+    if post.delete
+      flash[:notice] = "投稿が削除されました"
+      redirect_to posts_path
+    end
   end
 
   private
