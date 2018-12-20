@@ -11,7 +11,7 @@
 
 <div class="card">
   <div class="card-header text-white bg-dark">
-      <h4><%= @post.title %></h4>
+      <h4><%= @post.title %></h4>予算<%= number_with_delimiter(@post.budget) %>円
   </div>
   <div class="card-body">
       <p class="card-text"><%= @post.body %></p>
