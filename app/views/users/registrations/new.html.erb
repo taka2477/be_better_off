@@ -21,8 +21,8 @@
     </div>
     <br>
 
-    <label><%= f.radio_button :gender, "男" %> 男 </label>
-    <label><%= f.radio_button :gender, "女" %> 女 </label>
+    <label><%= f.radio_button :gender, "男性" %> 男性 </label>
+    <label><%= f.radio_button :gender, "女性" %> 女性 </label>
 
     <div class="field"><br>
       <% if @minimum_password_length %>
@@ -35,11 +35,17 @@
       <%= f.password_field :password_confirmation, placeholder: "パスワード確認" %>
     </div>
 
+    <div class="field text-center">
+      <%= f.check_box :accepted ,{},checked_value = "true",unchecked_value = "false" %>
+      <%#= f.label '利用規約、及び、個人情報の取扱に同意する' %>
+      <%= link_to '利用規約、及び、個人情報の取扱', home_policy_path, class: "text-muted" %>に同意する
+    </div>
+
     <br>
     <div class="actions">
-      <%= f.submit "登録する" %>
+      <%= f.submit "登録" %>
     </div>
   <% end %>
-
+  <br>
   <%= render "users/shared/links" %>
 </div>
