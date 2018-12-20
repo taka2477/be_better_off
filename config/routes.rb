@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  get 'users/show'
   root 'home#index'
-  get  'home/contact'
   get  'home/policy'
 
   resources :posts

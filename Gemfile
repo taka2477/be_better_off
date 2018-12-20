@@ -18,7 +18,6 @@ gem 'devise-i18n'
 gem 'rails-i18n'
 gem 'bootstrap',     '~> 4.1.0'
 gem 'devise-bootstrap-views'
-gem 'bullet'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -31,6 +30,8 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rails-erd'
   gem 'annotate'
+  gem 'capybara'
+  gem 'bullet'
 end
 
 group :production do
@@ -44,12 +45,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubocop-airbnb'
   gem 'spring-commands-rspec'
-end
-
-group :test do
-  gem 'capybara',              '>= 2.15'
-  gem 'selenium-webdriver'
-  gem 'chromedriver-helper'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
