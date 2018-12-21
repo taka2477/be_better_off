@@ -33,6 +33,8 @@ class PostsController < ApplicationController
     if post.update(post_params)
       flash[:notice] = "投稿が更新されました"
       redirect_to post_path(post.id)
+    else
+      redirect_to posts_path
     end
   end
 
@@ -40,6 +42,8 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     if post.delete
       flash[:notice] = "投稿が削除されました"
+      redirect_to posts_path
+    else
       redirect_to posts_path
     end
   end
