@@ -20,6 +20,10 @@
     <%= f.text_field :budget, class: 'form-control' %>
   </div>
   <div class="form-group">
+    <%= f.label :post, :タグ %>
+    <%= f.text_field :tag_list, value: post.tag_list.join(','), class: "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label :body, '投稿内容' %>
     <small id="poster-tip" class="form-text text-muted">
       プレゼント内容、相手様のご職業、性別、年齢、リアクション(できるだけ具体的に)

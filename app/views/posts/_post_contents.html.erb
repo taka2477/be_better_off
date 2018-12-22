@@ -1,11 +1,12 @@
 <thead class="thead-dark text-center">
   <tr>
-    <th scope="col" style="width: 50px">投稿No.</th>
+    <th scope="col" style="width: 60px">投稿No.</th>
     <th scope="col" style="width: 250px">投稿タイトル(クリックで詳細)</th>
     <th scope="col" style="width: 100px">投稿者</th>
     <th scope="col" style="width: 40px">年齢</th>
     <th scope="col" style="width: 40px">性別</th>
-    <th scope="col" style="width: 70px">予算</th>
+    <th scope="col" style="width: 90px">予算</th>
+    <th scope="col" style="width: 150px">タグ</th>
     <th scope="col" style="width: 90px">投稿日</th>
     <th scope="col" style="width: 90px">更新日</th>
   </tr>
@@ -19,6 +20,13 @@
       <td><%= post.user.age %></td>
       <td><%= post.user.gender %></td>
       <td><%= number_with_delimiter(post.budget) %>円</td>
+      <td>
+        <% if post.tag_list.present? %>
+          <% post.tag_list.each do |tag| %>
+            <span class="label label-primary"><%= tag %></span>
+          <% end %>
+        <% end %>
+      </td>
       <td><%= post.created_at.to_s(:datetime_base) %></td>
       <td><%= post.updated_at.to_s(:datetime_base) %></td>
     </tr>
