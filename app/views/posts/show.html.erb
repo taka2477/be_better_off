@@ -14,7 +14,7 @@
       <h4><%= @post.title %></h4>予算<%= number_with_delimiter(@post.budget) %>円
   </div>
   <div class="card-body">
-      <p class="card-text"><%= @post.body %></p>
+      <p class="card-text"><%= simple_format(@post.body) %></p>
   </div>
   <div class="card-footer">
     <p class="text-right font-weight-bold mr-10"><%= @post.user.username %></p>

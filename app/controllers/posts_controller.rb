@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.page(params[:page]).latest_posts
+    @posts = Post.includes(:tags).page(params[:page]).latest_posts
   end
 
   def show

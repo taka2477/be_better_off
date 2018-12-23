@@ -21,9 +21,9 @@
       <td><%= post.user.gender %></td>
       <td><%= number_with_delimiter(post.budget) %>円</td>
       <td>
-        <% if post.tag_list.present? %>
-          <% post.tag_list.each do |tag| %>
-            <span class="label label-primary"><%= tag %></span>
+        <% if post.tags.present? %>
+          <% post.tags.each do |tag| %>
+            <span class="label label-primary"><%= post.tags.pluck(:name).join(', ') %></span>
           <% end %>
         <% end %>
       </td>
