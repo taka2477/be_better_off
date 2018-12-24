@@ -1,29 +1,16 @@
 <% provide(:title, @post.title) %>
 
 <div class="text-center align-items-center mt-4 mb-4">
-  <div class="ml-auto posts_button">
-    <%= link_to '投稿一覧', posts_path, class: "btn btn-outline-info", role: "button" %>
-    <%= link_to '編集', edit_post_path, class: "btn btn-outline-info", role: "button" if user_signed_in? && current_user %>
-    <%= link_to "削除" , post_path, class: 'btn btn-outline-info',
-      method: :delete, data: {confirm: "削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認" } if @post.user.id == current_user.id %>
-  </div>
+  <%= render 'post_nav', post: @post %>
 </div>
+
 <%= render 'shared/notice' %>
-<div class="card">
-  <div class="card-header text-white bg-dark">
-    <h4><%= @post.title %></h4>予算<%= number_with_delimiter(@post.budget) %>円
-    <span class="label label-primary"><%= @post.tags.pluck(:name).join(', ') %></span>
-  </div>
-  <div class="card-body">
-      <p class="card-text"><%= simple_format(@post.body) %></p>
-  </div>
-  <div class="card-footer">
-    <p class="text-right font-weight-bold mr-10"><%= @post.user.username %></p>
-  </div>
-</div>
-<div>
-<h4>コメント</h4>
+
+<div class="card container-fluid">
+  <%= render 'post_detail', post:@post %>
+  <br>
   <% if user_signed_in? && current_user %>
-    <%= render 'comments/form', comment: @comment, post: @post %>
+    <%= render 'comments/form', comment: @comment, post: @post, comments: @comments %>
   <% end %>
   <%= render 'comments/index', comments: @comments %>
+</div>

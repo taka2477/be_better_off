@@ -6,7 +6,9 @@
     <%= link_to '投稿', new_post_path, class: "btn btn-outline-info", role: "button" if current_user %>
   </div>
 </div>
+
 <br>
+
 <table class="table table-bordered border-primary table-hover table-sm posts_table container block-center">
   <%= render 'post_contents', posts: @posts %>
 </table>

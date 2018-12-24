@@ -20,3 +20,5 @@ ja:
                 body: 投稿内容
                 budget: 予算
                 tag_list: タグ
+            comment:
+                content: コメント

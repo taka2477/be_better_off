@@ -7,11 +7,11 @@
   <div class="parent">
     <%= image_tag "man.jpeg", class: "img-fluid mr-3", alt: "man" %>
     <div class="inner">
-      <h3><%= current_user.username %></h3>
-      <p><%= current_user.email %></p>
-      <p><%= current_user.age %>歳</p>
-      <p><%= current_user.gender %></p>
-      <p><%= link_to '編集', edit_user_registration_path, class: "nav-item nav-link" if user_signed_in? && current_user %></p>
+      <h3><%= @user.username %></h3>
+      <p><%= @user.email %></p>
+      <p><%= @user.age %>歳</p>
+      <p><%= @user.gender %></p>
+      <p><%= link_to '編集', edit_user_registration_path, class: "nav-item nav-link" if user_signed_in? && @user %></p>
     </div>
   </div>
 </div>

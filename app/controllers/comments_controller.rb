@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
+      flash[:notice] = "コメントしました"
       redirect_back(fallback_location: posts_path)
     end
   end
@@ -11,6 +12,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     if @comment.destroy
+      flash[:notice] = "コメント削除しました"
       redirect_back(fallback_location: posts_path)
     end
   end

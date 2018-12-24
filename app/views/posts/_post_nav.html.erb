@@ -1,0 +1,6 @@
+<div class="ml-auto posts_button">
+  <%= link_to '投稿一覧', posts_path, class: "btn btn-outline-info", role: "button" %>
+  <%= link_to '編集', edit_post_path, class: "btn btn-outline-info", role: "button" if user_signed_in? && current_user %>
+  <%= link_to "削除" , post_path, class: 'btn btn-outline-info',
+    method: :delete, data: {confirm: "削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認" } if post.user == current_user %>
+</div>

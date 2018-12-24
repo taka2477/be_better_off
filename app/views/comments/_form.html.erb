@@ -1,4 +1,6 @@
 <%= form_with(model: [post, comment]) do |form| %>
-  <%= form.text_area :content %>
-  <%= form.submit "コメント" %>
+  <div class="form-group">
+    <%= form.text_area :content, placeholder: "コメントを入力してください", class:"form-control" %>
+  </div>
+  <%= form.submit "コメント", class: "btn btn-primary" %>
 <% end %>
