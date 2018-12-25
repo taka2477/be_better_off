@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :user do
-    sequence(:username) { |u| "test_user#{u}" }
+    sequence(:username) { |n| "test_user#{n}" }
     password { 123456 }
     password_confirmation { 123456 }
     age { 28 }
