@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_24_040822) do
+ActiveRecord::Schema.define(version: 2018_12_25_032212) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "post_id"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2018_12_24_040822) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "budget"
+    t.string "image"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 

@@ -16,6 +16,12 @@
     <%= f.label :body, '投稿内容' %>
     <%= f.text_area :body, class: 'form-control', rows:10 %>
   </div>
+  <% if post.image? %>
+    <div class="form-group">
+      <%= image_tag post.image.url %>
+      <%= f.check_box :remove_image %>画像を削除する
+    </div>
+  <% end %>
   <%= f.submit '投稿', class: 'btn btn-info btn-block' %>
 <% end %>
 
