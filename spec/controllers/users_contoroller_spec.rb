@@ -32,7 +32,7 @@ RSpec.describe UsersController, type: :controller do
         get :index
       end
 
-      it "responds does not success" do
+      it "does not respond successfuly" do
         expect(response).not_to be_successful
       end
 

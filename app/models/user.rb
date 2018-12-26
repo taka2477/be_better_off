@@ -11,5 +11,5 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true, length: { maximum: 15 }
   validates :age, presence: true, length: { maximum: 2 }
   validates :gender, presence: true, length: { maximum: 2 }
-  validates :accepted, presence: { message: 'を入力してください' }, on: :create
+  validates :accepted, presence: { message: 'にチェックしてください' }, on: :create
 end
