@@ -9,7 +9,7 @@
 <div class="card container-fluid">
   <%= render 'post_detail', post:@post %>
   <br>
-  <% if user_signed_in? && current_user %>
+  <% if current_user %>
     <%= render 'comments/form', comment: @comment, post: @post, comments: @comments %>
   <% end %>
   <%= render 'comments/index', comments: @comments %>

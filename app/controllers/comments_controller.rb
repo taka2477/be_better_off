@@ -1,13 +1,12 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_post, only: %W[create]
 
   def create
-    @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
-    @comment.user_id = current_user.id
     if @comment.save
       flash[:notice] = "コメントしました"
-      redirect_back(fallback_location: posts_path)
+      redirect_back fallback_location: @post
     end
   end
 
@@ -15,13 +14,17 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     if @comment.destroy
       flash[:notice] = "コメント削除しました"
-      redirect_back(fallback_location: posts_path)
+      redirect_back fallback_location: @post
     end
   end
 
   private
+  def set_post
+    @post = Post.find(params[:post_id])
+  end
 
   def comment_params
-    params.require(:comment).permit(:content, :user_id, :post_id)
+    tmp = params.require(:comment).permit(:content, :post_id)
+    tmp.merge(user_id: current_user.id)
   end
 end

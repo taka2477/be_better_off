@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_post, only: %W[show, edit, update, destroy]
 
   def new
     @post = Post.new
@@ -10,9 +11,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
     @comment = Comment.new
-    @comments = @post.comments
+    @comments = set_post.comments
   end
 
   def create
@@ -29,11 +29,10 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    set_post
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       flash[:notice] = "投稿が更新されました"
       redirect_to post_path(@post.id)
@@ -43,7 +42,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
     if @post.delete
       flash[:notice] = "投稿が削除されました"
       redirect_to posts_path
@@ -53,6 +51,9 @@ class PostsController < ApplicationController
   end
 
   private
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:title, :body, :budget, :tag_list)
