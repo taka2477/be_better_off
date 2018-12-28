@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update(post_params)
+    if set_post.update(post_params)
       flash[:notice] = "投稿が更新されました"
       redirect_to post_path(@post.id)
     else
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    if @post.delete
+    if set_post.delete
       flash[:notice] = "投稿が削除されました"
       redirect_to posts_path
     else

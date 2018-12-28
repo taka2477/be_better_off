@@ -23,7 +23,7 @@
       <td>
         <% if post.tags.present? %>
           <% post.tags.each do |tag| %>
-            <span class="label label-primary"><%= post.tags.pluck(:name).join(', ') %></span>
+            <span class="label label-primary"><%= tag.name %></span>
           <% end %>
         <% end %>
       </td>
