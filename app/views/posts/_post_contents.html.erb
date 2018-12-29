@@ -23,7 +23,7 @@
       <td>
         <% if post.tags.present? %>
           <% post.tags.each do |tag| %>
-            <span class="label label-primary"><%= tag.name %></span>
+            <span class="badge badge-pill badge-warning"><%= tag.name %></span>
           <% end %>
         <% end %>
       </td>

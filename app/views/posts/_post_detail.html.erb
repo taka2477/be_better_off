@@ -2,7 +2,12 @@
   <h4><%= post.title %></h4>
   <p>ユーザー名：<%= post.user.username %></p>
   予算：<%= number_with_delimiter(post.budget) %>円
-  タグ：<span class="label label-primary"><%= post.tags.pluck(:name).join(', ') %></span>
+  タグ：
+  <% if post.tags.present? %>
+    <% post.tags.each do |tag| %>
+      <span class="badge badge-pill badge-warning"><%= tag.name %></span>
+    <% end %>
+  <% end %>
 </div>
 <div class="card-body">
     <p class="card-text"><%= simple_format(post.body) %></p>
