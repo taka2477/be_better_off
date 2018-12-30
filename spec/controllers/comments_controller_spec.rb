@@ -17,12 +17,4 @@ RSpec.describe CommentsController, type: :controller do
       }.to change(user.comments, :count).by(1)
     end
   end
-
-  # describe "#destroy" do
-  #   it "can destroy a comment" do
-  #     expect {
-  #       delete :destroy, params: { id: comment.id }
-  #     }.to change(user.comments, :count).by(-1)
-  #   end
-  # end
 end
