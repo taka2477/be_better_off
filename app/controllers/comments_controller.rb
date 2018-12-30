@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     if @comment.destroy
       flash[:notice] = "コメント削除しました"
-      redirect_to posts_path
+      redirect_back fallback_location: @post
     end
   end
 
