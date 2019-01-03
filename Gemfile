@@ -35,6 +35,7 @@ group :development, :test do
   gem 'annotate'
   gem 'capybara'
   gem 'bullet'
+  gem 'launchy'
 end
 
 group :production do
