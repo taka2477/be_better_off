@@ -1,9 +1,0 @@
-<% comments.each do |comment| %>
-  <% unless comment.id.nil? %>
-    <%= link_to "#{comment.user.username}", user_path(comment.user.id) %>
-    <p><%= comment.content %></p>
-    <% if comment.user == current_user %>
-      <%= link_to '削除', post_comment_path(comment.user.id, comment.id), method: :delete, data: { confirm: "削除しますか?" } %>
-    <% end %>
-  <% end %>
-<% end %>
