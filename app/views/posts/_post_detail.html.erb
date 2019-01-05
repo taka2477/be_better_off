@@ -1,0 +1,10 @@
+<div class="card-header text-white bg-dark">
+  <h4><%= post.title %></h4>
+  <p>ユーザー名：<%= post.user.username %></p>
+  予算：<%= number_with_delimiter(post.budget) %>円
+  タグ：<span class="label label-primary"><%= post.tags.pluck(:name).join(', ') %></span>
+</div>
+<div class="card-body">
+  <p class="card-text"><%= simple_format(post.body) %></p>
+  <%= image_tag post.image.url if post.image? %>
+</div>

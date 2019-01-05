@@ -1,0 +1,30 @@
+<%= render 'shared/error_messages' %>
+
+<%= form_for post do |f| %>
+  <div class="form-group">
+    <%= f.label :title, '投稿タイトル' %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= f.label :budget, '予算' %>
+    <%= f.text_field :budget, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :post, :タグ %>
+    <%= f.text_field :tag_list, value: post.tag_list.join(','), class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :body, '投稿内容' %>
+    <small id="poster-tip" class="form-text text-muted">
+      プレゼント内容、相手様のご職業、性別、年齢、リアクション(できるだけ具体的に)
+    </small>
+    <%= f.text_area :body, class: 'form-control', rows:10 %>
+  </div>
+  <div class="form-group">
+    <%= f.file_field :image %>
+  </div>
+  <%= f.submit '投稿', class: 'btn btn-info btn-block' %>
+<% end %>　
+
+<%= render 'shared/notice' %>

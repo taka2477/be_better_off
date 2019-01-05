@@ -1,0 +1,16 @@
+<% provide(:title, @post.title) %>
+
+<div class="text-center align-items-center mt-4 mb-4">
+  <%= render 'post_nav', post: @post %>
+</div>
+
+<%= render 'shared/notice' %>
+
+<div class="card container-fluid">
+  <%= render 'post_detail', post:@post %>
+  <br>
+  <% if user_signed_in? && current_user %>
+    <%= render 'comments/form', comment: @comment, post: @post, comments: @comments %>
+  <% end %>
+  <%= render 'comments/index', comments: @comments %>
+</div>
