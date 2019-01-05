@@ -21,6 +21,8 @@ gem 'devise-bootstrap-views'
 gem 'rails_admin'
 gem 'cancancan'
 gem 'acts-as-taggable-on'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -40,6 +42,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'fog'
 end
 
 group :development do

@@ -10,5 +10,6 @@
   <% end %>
 </div>
 <div class="card-body">
-    <p class="card-text"><%= simple_format(post.body) %></p>
+  <p class="card-text"><%= simple_format(post.body) %></p>
+  <%= image_tag post.image.url if post.image? %>
 </div>
