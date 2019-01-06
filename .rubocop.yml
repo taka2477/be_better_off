@@ -14,3 +14,5 @@ AllCops:
     - db/**/*
     - config/**/*
     - Gemfile
+    - app/uploaders/image_uploader.rb
+    - app/models/ability.rb

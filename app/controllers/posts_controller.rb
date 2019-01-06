@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_post, only: %W[show, edit, update, destroy]
+  before_action :set_post, only: %W[show edit update destroy]
 
   def new
     @post = Post.new
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
     else
       redirect_to new_post_path, flash: {
         post: @post,
-        error_messages: @post.errors.full_messages
+        error_messages: @post.errors.full_messages,
       }
     end
   end
@@ -51,6 +51,7 @@ class PostsController < ApplicationController
   end
 
   private
+
   def set_post
     @post = Post.find(params[:id])
   end

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   context "when correct user is created" do
-    let(:user){ create(:user) }
+    let(:user) { create(:user) }
 
     it "is valid with proper information for user registration" do
       expect(user).to be_valid
@@ -10,7 +10,7 @@ RSpec.describe User, type: :model do
   end
 
   context "when each validation works properly" do
-    let(:user) { User.create() }
+    let(:user) { User.create(nil) }
 
     it "is invalid username" do
       expect(user.errors.full_messages).to include("ユーザー名を入力してください")
