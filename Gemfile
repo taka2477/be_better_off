@@ -23,6 +23,7 @@ gem 'cancancan'
 gem 'acts-as-taggable-on'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -41,7 +42,6 @@ end
 
 group :production do
   gem 'pg',                    '~> 0.19.0'
-  gem 'fog'
 end
 
 group :development do
