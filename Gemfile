@@ -28,7 +28,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
-  gem 'sqlite3'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
   gem 'pry-doc'
@@ -41,7 +40,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg',                    '~> 0.19.0'
   gem 'fog'
 end
 
@@ -52,6 +51,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubocop-airbnb'
   gem 'spring-commands-rspec'
+  gem 'sqlite3'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
