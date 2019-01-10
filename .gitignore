@@ -20,6 +20,5 @@ doc/
 .DS_Store
 .idea
 .secret
-/config/initializers/carrierwave.rb
 .env
 /public/uploads
