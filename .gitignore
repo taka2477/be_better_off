@@ -21,3 +21,4 @@ doc/
 .idea
 .secret
 /config/initializers/carrierwave.rb
+.env
