@@ -22,3 +22,4 @@ doc/
 .secret
 /config/initializers/carrierwave.rb
 .env
+/public/uploads
