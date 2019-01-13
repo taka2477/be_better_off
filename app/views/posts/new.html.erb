@@ -1,0 +1,12 @@
+<% provide(:title, '新規投稿') %>
+
+<div class="container text-center">
+  <h1>投稿</h1><br>
+  <div class="ml-auto posts_button">
+    <%= link_to '投稿一覧', posts_path, role: "button", class: "btn btn-outline-info" %>
+  </div>
+</div>
+
+<ul class="container block-center">
+  <%= render 'post_new_form', post: @post %>
+</div>
