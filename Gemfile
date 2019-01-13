@@ -13,7 +13,6 @@ gem 'jbuilder',     '~> 2.5'
 gem 'bootsnap',     '>= 1.1.0', require: false
 gem 'devise'
 gem 'kaminari'
-#gem 'omniauth-twitter'
 gem 'devise-i18n'
 gem 'rails-i18n'
 gem 'bootstrap',     '~> 4.1.0'
@@ -25,6 +24,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 gem 'dotenv-rails'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'rspec-rails'
